@@ -1,0 +1,11 @@
+MOV R0,1
+loop:
+MOV R1,R0
+SUB R1,21
+JZ R1,exit
+PORT P1,R0
+OUT
+INR R0
+JMP loop
+exit:
+HALT
