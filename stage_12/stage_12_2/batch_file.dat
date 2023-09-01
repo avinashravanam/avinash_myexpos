@@ -1,0 +1,8 @@
+load --os $HOME/desktop/myexpos/stage_12/stage_12_2/os_startup.xsm
+load --init $HOME/desktop/myexpos/stage_12/stage_12_2/init.xsm
+load --exhandler $HOME/desktop/myexpos/stage_12/stage_12_2/exception.xsm
+load --int=10 $HOME/desktop/myexpos/stage_12/stage_12_2/exit.xsm
+load --int=timer $HOME/desktop/myexpos/stage_12/stage_12_2/timer.xsm
+load --int=7 $HOME/desktop/myexpos/stage_12/stage_12_2/write.xsm
+load --idle $HOME/desktop/myexpos/stage_12/stage_12_2/idle.xsm
+load --library $HOME/desktop/myexpos/expl/library.lib
