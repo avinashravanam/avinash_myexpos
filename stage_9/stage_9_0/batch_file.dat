@@ -1,0 +1,6 @@
+load --os $HOME/desktop/myexpos/stage_9/stage_9_0/os_startup.xsm
+load --init $HOME/desktop/myexpos/stage_9/stage_9_0/init.xsm
+load --exhandler $HOME/desktop/myexpos/stage_9/stage_9_0/exception.xsm
+load --int=10 $HOME/desktop/myexpos/stage_9/stage_9_0/exit.xsm
+load --int=timer $HOME/desktop/myexpos/stage_9/stage_9_0/timer.xsm
+load --library $HOME/desktop/myexpos/expl/library.lib
