@@ -1,0 +1,4 @@
+load --os $HOME/desktop/myexpos/stage_6/stage_6_1/os_startup.xsm
+load --init $HOME/desktop/myexpos/stage_6/stage_6_1/init.xsm
+load --exhandler $HOME/desktop/myexpos/stage_6/stage_6_1/exception.xsm
+load --int=10 $HOME/desktop/myexpos/stage_6/stage_6_1/exit.xsm
