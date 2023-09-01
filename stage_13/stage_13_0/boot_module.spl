@@ -58,9 +58,9 @@ PTLR=10;
 [PTBR+18]=77;
 [PTBR+19]="0110";
 
-//setting process table for init
+//setting process table for prog1
 [PROCESS_TABLE + 17]=1;
-[PROCESS_TABLE + 20]=READY;
+[PROCESS_TABLE + 20]=CREATED;
 [PROCESS_TABLE + 27]=80;
 [PROCESS_TABLE + 28]=0;
 [PROCESS_TABLE + 29]=8*512;
