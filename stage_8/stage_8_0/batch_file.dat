@@ -1,0 +1,5 @@
+load --os $HOME/desktop/myexpos/stage_8/stage_8_0/os_startup.xsm
+load --init $HOME/desktop/myexpos/stage_8/stage_8_0/init.xsm
+load --exhandler $HOME/desktop/myexpos/stage_8/stage_8_0/exception.xsm
+load --int=10 $HOME/desktop/myexpos/stage_8/stage_8_0/exit.xsm
+load --int=timer $HOME/desktop/myexpos/stage_8/stage_8_0/timer.xsm
