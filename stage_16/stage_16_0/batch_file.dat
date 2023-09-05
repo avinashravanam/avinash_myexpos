@@ -1,0 +1,14 @@
+load --os $HOME/desktop/myexpos/stage_16/stage_16_0/os_startup.xsm
+load --init $HOME/desktop/myexpos/stage_16/stage_16_0/init.xsm
+load --exhandler $HOME/desktop/myexpos/stage_16/stage_16_0/exception.xsm
+load --int=10 $HOME/desktop/myexpos/stage_16/stage_16_0/exit.xsm
+load --int=timer $HOME/desktop/myexpos/stage_16/stage_16_0/timer.xsm
+load --int=console $HOME/desktop/myexpos/stage_16/stage_16_0/console.xsm
+load --int=6 $HOME/desktop/myexpos/stage_16/stage_16_0/read.xsm
+load --int=7 $HOME/desktop/myexpos/stage_16/stage_16_0/write.xsm
+load --idle $HOME/desktop/myexpos/stage_16/stage_16_0/idle.xsm
+load --module 0 $HOME/desktop/myexpos/stage_16/stage_16_0/mod_0.xsm
+load --module 4 $HOME/desktop/myexpos/stage_16/stage_16_0/mod_4.xsm
+load --module 5 $HOME/desktop/myexpos/stage_16/stage_16_0/mod_5.xsm
+load --module 7 $HOME/desktop/myexpos/stage_16/stage_16_0/mod_7.xsm
+load --library $HOME/desktop/myexpos/expl/library.lib

@@ -5,3 +5,4 @@ load --int=10 $HOME/desktop/myexpos/stage_11/stage_11_0/exit.xsm
 load --int=timer $HOME/desktop/myexpos/stage_11/stage_11_0/timer.xsm
 load --int=7 $HOME/desktop/myexpos/stage_11/stage_11_0/write.xsm
 load --library $HOME/desktop/myexpos/expl/library.lib
+load --library $HOME/desktop/myexpos/stage_11/stage_11_0/lib.xsm

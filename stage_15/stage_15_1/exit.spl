@@ -17,7 +17,7 @@ alias status R2;
    bool = 1;
    break;
 
- endif;
+ endif; 
 
  i=i+1;
 

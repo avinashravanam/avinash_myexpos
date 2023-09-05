@@ -11,7 +11,7 @@ int main()
     i=1;
     while(i<=100) do
     
-       t = exposcall("Write", -2,i);
+       t = exposcall("Write",-2,i);
        i=i+1;
        
     endwhile;
