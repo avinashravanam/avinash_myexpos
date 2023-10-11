@@ -1,0 +1,17 @@
+int main()
+{
+    decl
+        int t;
+        str file;
+        str msg;
+    enddecl
+
+    begin
+        t = exposcall("Read", -1, file);
+        t = exposcall("Exec",file);
+        msg = "file not exists";
+        t = exposcall("Write",-2,msg);
+        
+        return 0;
+    end
+}
