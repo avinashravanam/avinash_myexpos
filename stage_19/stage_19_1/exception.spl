@@ -2,6 +2,7 @@
 
 //print "exception";
 
+breakpoint;
 [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 13] = SP;
 SP = [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 11]*512 - 1;
 backup;
@@ -43,7 +44,7 @@ else  if(EC == 0)  then
     
     if(EPN == 2 || EPN == 3) then
         
-        breakpoint;
+        
        // print "Heap";
         R1 = 1;
         call MOD_2;   //calling get free page
@@ -56,11 +57,11 @@ else  if(EC == 0)  then
         [PTBR + 6] = R0;
         [PTBR + 7] = "1110";
 
-        breakpoint;
+        //breakpoint;
 
     else if (EPN == 4 || EPN == 5|| EPN == 6 || EPN == 7) then
         
-        breakpoint;
+       // breakpoint;
        // print "code";
         R1 = 3;
         //print EPN;
