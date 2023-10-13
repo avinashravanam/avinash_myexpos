@@ -13,8 +13,9 @@ if(fun_num == 1) then
         
         if([PROCESS_TABLE + i*16 + 4] == TERMINATED) then
               
+             [PROCESS_TABLE + i*16 + 1] = i;
              [PROCESS_TABLE + i*16 + 4] = ALLOCATED;
-             [PROCESS_TABLE + i*16 + 14] = PAGE_TABLE_BASE + i*10;
+             [PROCESS_TABLE + i*16 + 14] = PAGE_TABLE_BASE + i*20;
              [PROCESS_TABLE + i*16 + 15] = 10;
              return;
 

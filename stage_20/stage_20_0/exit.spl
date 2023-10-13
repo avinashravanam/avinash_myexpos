@@ -1,38 +1,14 @@
 SP = [PROCESS_TABLE + [SYSTEM_STATUS_TABLE+1]*16 + 11]*512 -1;
-[PROCESS_TABLE + [SYSTEM_STATUS_TABLE+1]*16 + 4] = TERMINATED;
 
-alias i R0;
-alias bool R1;
-alias status R2;
+[PROCESS_TABLE + [SYSTEM_STATUS_TABLE+1]*16 + 9] = 10;  //mode change
+//calling exit process 
 
- i = 1;
- bool = 0;
-
- while(i<=15) do 
-
-    status = [PROCESS_TABLE + i*16 + 4];
-
-    if(status != TERMINATED) then
-
-      bool = 1;
-      break;
-
-    endif; 
-
-    i=i+1;
-
- endwhile;
+R1 = 3;
+R2 = [SYSTEM_STATUS_TABLE + 1];
+call MOD_1;
 
 
- if(bool == 1) then 
-
- call MOD_5;
-
- else
-
- halt;
-
- endif;
+call MOD_5;
 
      
 

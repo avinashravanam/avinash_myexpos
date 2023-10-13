@@ -7,7 +7,7 @@ load --init $HOME/desktop/myexpos/stage_20/stage_20_0/init.xsm
 load --idle $HOME/desktop/myexpos/stage_20/stage_20_0/idle.xsm
 load --int=6 $HOME/desktop/myexpos/stage_20/stage_20_0/read.xsm
 load --int=7 $HOME/desktop/myexpos/stage_20/stage_20_0/write.xsm
-load --int=8 $HOME/desktop/myexpos/stage_20/stage_20_0/fork.xsm
+load --int=8 $HOME/desktop/myexpos/stage_20/stage_20_0/int_8.xsm
 load --int=9 $HOME/desktop/myexpos/stage_20/stage_20_0/int_9.xsm
 load --int=10 $HOME/desktop/myexpos/stage_20/stage_20_0/exit.xsm
 load --module 0 $HOME/desktop/myexpos/stage_20/stage_20_0/mod_0.xsm

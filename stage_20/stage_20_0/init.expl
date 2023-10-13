@@ -7,11 +7,25 @@ int main()
     enddecl
 
     begin
-        t = exposcall("Read", -1, file);
-        t = exposcall("Exec",file);
-        msg = "file not exists";
-        t = exposcall("Write",-2,msg);
         
+        t = exposcall("Fork");
+
+        if(t==0)  then
+            msg = "child";
+            t = exposcall("Write",-2,msg);
+            t = exposcall("Read", -1, file);
+            t = exposcall("Exec",file);
+
+        else if(t>0)  then
+           
+            msg = "parent";
+            t = exposcall("Write",-2,msg);
+            t = exposcall("Read", -1, file);
+            t = exposcall("Exec",file);
+
+        endif;
+        endif;
+
         return 0;
     end
 }

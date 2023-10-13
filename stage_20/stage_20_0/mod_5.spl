@@ -17,30 +17,30 @@ newPID = 0;
 
 while(i!=j) do
 
-i=i%16;
-status = [PROCESS_TABLE + i*16 + 4];
+  i=i%16;
+  status = [PROCESS_TABLE + i*16 + 4];
 
-if(status == CREATED) then
+  if(status == CREATED) then
 
-newPID =i;
-break;
+    newPID =i;
+    break;
 
-endif;
+  endif;
 
-if(status == READY) then
+  if(status == READY) then
 
-newPID =i;
-break;
+    newPID =i;
+    break;
 
-endif;
+  endif;
 
-i = i+1;
+  i = i+1;
 
-if(i==0) then
+  if(i==0) then
 
-i=1;
+    i=1;
 
-endif;
+  endif;
 
 endwhile;
 
@@ -58,6 +58,8 @@ if([new_process_table + 4]== CREATED)  then
   [new_process_table + 4] = RUNNING;
   [new_process_table + 9] = 0;
   SP = [new_process_table + 13];
+  BP = [[new_process_table + 11]*512];
+  // print BP;
   ireturn;
 
 endif;
