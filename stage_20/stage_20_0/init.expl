@@ -11,17 +11,17 @@ int main()
         t = exposcall("Fork");
 
         if(t==0)  then
-            msg = "child";
-            t = exposcall("Write",-2,msg);
-            t = exposcall("Read", -1, file);
-            t = exposcall("Exec",file);
+            // msg = "child";
+            // t = exposcall("Write",-2,msg);
+            // t = exposcall("Read", -1, file);
+            t = exposcall("Exec","odd.xsm");
 
         else if(t>0)  then
            
-            msg = "parent";
-            t = exposcall("Write",-2,msg);
-            t = exposcall("Read", -1, file);
-            t = exposcall("Exec",file);
+            // msg = "parent";
+            // t = exposcall("Write",-2,msg);
+            // t = exposcall("Read", -1, file);
+            t = exposcall("Exec","even.xsm");
 
         endif;
         endif;

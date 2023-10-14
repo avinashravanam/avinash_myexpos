@@ -2,7 +2,7 @@
 //no arguments
 
 
-print "fork";
+// print "fork";
 
 alias user_SP R0;
 alias child_pid R1;
@@ -224,6 +224,6 @@ endwhile;
 //mode change
 [parent_pcb + 9 ] = 0;
 SP = [parent_pcb + 13];
-print "exitf";
+// print "exitf";
 breakpoint;
 ireturn;
