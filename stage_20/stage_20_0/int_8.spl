@@ -78,7 +78,7 @@ parent_pcb = PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16;
 
 
 [child_pcb + 2] = [SYSTEM_STATUS_TABLE + 1];    // PPID
-[child_pcb + 4] = CREATED;                      //state
+
 [child_pcb + 9] = 0;                            //mode
 
 multipush(R0,R1,R2,R3);
@@ -220,6 +220,7 @@ endwhile;
 //parent process
 [[PTBR + 2*(user_SP -1)/512]*512 + (user_SP - 1)%512 ] = child_pid;
 
+[child_pcb + 4] = CREATED;                      //state
 
 //mode change
 [parent_pcb + 9 ] = 0;

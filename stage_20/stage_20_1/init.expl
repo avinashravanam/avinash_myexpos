@@ -53,6 +53,8 @@ int main()
 
         t = exposcall("Fork");
 
+        t = exposcall("Fork");
+
         if(t==0)  then
 
            p = head;
@@ -63,6 +65,8 @@ int main()
 
               if(p.next == null) then
                  break;
+
+               endif;
 
               p= p.next.next;
             
@@ -79,12 +83,15 @@ int main()
 
               if(p.next == null) then
                  break;
+               endif;
 
               p= p.next.next;
             
             endwhile;
 
-        endif;
+            
+
+            endif; endif;
 
         return 0;
     end
