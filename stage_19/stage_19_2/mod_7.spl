@@ -111,7 +111,7 @@ PTLR=10;
 //resource table setup
 alias RESOURCE_TABLE_ADDRESS R6;
 
-RESOURCE_TABLE_ADDRESS = (80*512)-16;
+RESOURCE_TABLE_ADDRESS = (80+1)*512-16;
 
 alias itr R7;
 itr = 0;

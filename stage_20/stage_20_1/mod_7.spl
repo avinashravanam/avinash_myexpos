@@ -123,6 +123,22 @@ while(i < 128) do
     i = i + 1;
 endwhile;
 
+
+//resource table setup
+alias RESOURCE_TABLE_ADDRESS R6;
+
+RESOURCE_TABLE_ADDRESS = (80+1)*512-16;
+
+alias itr R7;
+itr = 0;
+
+while (itr < 16) do
+   
+   [RESOURCE_TABLE_ADDRESS + itr] = -1;
+   itr = itr + 1;
+
+endwhile;
+
 [SYSTEM_STATUS_TABLE + 2] = 45;
 [SYSTEM_STATUS_TABLE + 3] = 0;
 

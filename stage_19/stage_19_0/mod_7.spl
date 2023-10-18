@@ -107,6 +107,23 @@ PTLR=10;
 [PROCESS_TABLE + 30]=PAGE_TABLE_BASE+20;
 [PROCESS_TABLE + 31]=10;
 
+
+//resource table setup
+alias RESOURCE_TABLE_ADDRESS R6;
+
+RESOURCE_TABLE_ADDRESS = (80+1)*512-16;
+
+alias itr R7;
+itr = 0;
+
+while (itr < 16) do
+   
+   [RESOURCE_TABLE_ADDRESS + itr] = -1;
+   itr = itr + 1;
+
+endwhile;
+
+
 alias i R0;
 i = 0;
 while(i < 128) do 
