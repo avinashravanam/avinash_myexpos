@@ -53,7 +53,6 @@ int main()
 
         t = exposcall("Fork");
 
-        t = exposcall("Fork");
 
         if(t==0)  then
 

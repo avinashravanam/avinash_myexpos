@@ -86,7 +86,7 @@ endif;
 endif;
 
 
-multipop(EPN);
+multipop(EIP);
 restore;
 
 //mode change
