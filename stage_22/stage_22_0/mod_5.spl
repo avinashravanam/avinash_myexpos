@@ -1,4 +1,4 @@
-breakpoint;
+
 multipush(BP);
 
 [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 12] = SP%512;
@@ -67,5 +67,5 @@ endif;
 
 [new_process_table + 4] = RUNNING;
 multipop(BP);
-breakpoint;
+
 return;

@@ -1,0 +1,24 @@
+load --os $HOME/desktop/myexpos/stage_23/stage_23_0/os_startup.xsm
+load --exhandler $HOME/desktop/myexpos/stage_23/stage_23_0/exception.xsm
+load --int=timer $HOME/desktop/myexpos/stage_23/stage_23_0/timer.xsm
+load --int=console $HOME/desktop/myexpos/stage_23/stage_23_0/console.xsm
+load --int=disk $HOME/desktop/myexpos/stage_23/stage_23_0/disk.xsm
+load --init $HOME/desktop/myexpos/stage_23/stage_23_0/init.xsm
+load --idle $HOME/desktop/myexpos/stage_23/stage_23_0/idle.xsm
+load --int=4 $HOME/desktop/myexpos/stage_23/stage_23_0/int_4.xsm
+load --int=6 $HOME/desktop/myexpos/stage_23/stage_23_0/read.xsm
+load --int=7 $HOME/desktop/myexpos/stage_23/stage_23_0/write.xsm
+load --int=8 $HOME/desktop/myexpos/stage_23/stage_23_0/int_8.xsm
+load --int=9 $HOME/desktop/myexpos/stage_23/stage_23_0/int_9.xsm
+load --int=11 $HOME/desktop/myexpos/stage_23/stage_23_0/int_11.xsm
+load --int=13 $HOME/desktop/myexpos/stage_23/stage_23_0/int_13.xsm
+load --int=14 $HOME/desktop/myexpos/stage_23/stage_23_0/int_14.xsm
+load --int=15 $HOME/desktop/myexpos/stage_23/stage_23_0/int_15.xsm
+load --int=10 $HOME/desktop/myexpos/stage_23/stage_23_0/exit.xsm
+load --module 0 $HOME/desktop/myexpos/stage_23/stage_23_0/mod_0.xsm
+load --module 1 $HOME/desktop/myexpos/stage_23/stage_23_0/mod_1.xsm
+load --module 2 $HOME/desktop/myexpos/stage_23/stage_23_0/mod_2.xsm
+load --module 4 $HOME/desktop/myexpos/stage_23/stage_23_0/mod_4.xsm
+load --module 5 $HOME/desktop/myexpos/stage_23/stage_23_0/mod_5.xsm
+load --module 7 $HOME/desktop/myexpos/stage_23/stage_23_0/mod_7.xsm
+load --library $HOME/desktop/myexpos/expl/library.lib
