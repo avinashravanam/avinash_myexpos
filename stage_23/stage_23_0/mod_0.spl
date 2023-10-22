@@ -63,8 +63,10 @@ endif;
 //release inode
 if(fun_number == 5) then
     
+    print "release";
     alias inodeindex R2;
     alias PID R3;
+
     alias file_entry R4;
     alias process_entry R5;
 

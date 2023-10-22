@@ -85,7 +85,7 @@ endif;
    alias block_number R2;
    alias PID  R3;
 
-   [DISK_MAP_TABLE + block_number ]= [DISK_MAP_TABLE + block_number] - 1;
+   [DISK_FREE_LIST + block_number ]= [DISK_FREE_LIST + block_number] - 1;
    
    return;
 

@@ -1,0 +1,63 @@
+alias userSP R0;
+userSP = SP;
+
+[PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 13] = SP;
+SP = [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 11]*512 -1;
+
+
+//mode change
+[PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 9] = 15;
+
+
+alias process_entry R1;
+process_entry = PROCESS_TABLE + [SYSTEM_STATUS_TABLE+ 1]*16;
+
+if([SYSTEM_STATUS_TABLE + 1]!= 1 || [process_entry + 3] != 1) then
+    
+       [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 9] = 0;
+       [[PTBR + 2*(userSP - 1)/512]*512 + (userSP - 1)%512] = -1;
+       SP = [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 13];
+       ireturn;
+
+endif;
+
+
+//disk free list
+multipush(R0,R1);
+R1 = 1;
+R2 = [SYSTEM_STATUS_TABLE + 1];
+R3 = 61;
+R4 = 2;
+call MOD_4;
+multipop(R0,R1);
+
+//inode table
+multipush(R0,R1);
+R1 = 1;
+R2 = [SYSTEM_STATUS_TABLE + 1];
+R3 = 59;
+R4 = 3;
+call MOD_4;
+multipop(R0,R1);
+
+multipush(R0,R1);
+R1 = 1;
+R2 = [SYSTEM_STATUS_TABLE + 1];
+R3 = 60;
+R4 = 4;
+call MOD_4;
+multipop(R0,R1);
+
+
+//root file
+multipush(R0,R1);
+R1 = 1;
+R2 = [SYSTEM_STATUS_TABLE + 1];
+R3 = 62;
+R4 = 5;
+call MOD_4;
+multipop(R0,R1);
+
+halt;
+
+
