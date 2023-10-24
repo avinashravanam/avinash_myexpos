@@ -76,7 +76,7 @@ if(fun_num == 2)  then
              R1 = 4;
              R2 = [RESOURCE_TABLE_ADDRESS + itr*2 + 1];
              call MOD_3;
-             multipush(R1,R2,R3,R4,R5);
+             multipop(R1,R2,R3,R4,R5);
 
         endif;
         
