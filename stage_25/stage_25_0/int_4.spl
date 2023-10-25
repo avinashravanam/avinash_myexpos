@@ -14,7 +14,7 @@ syscall = [[PTBR + 2*(userSP - 5)/512]*512 + (userSP - 5)%512];
 //create file
 if(syscall == 1 ) then
     
-    breakpoint;
+
      //mode change 
      [process_entry + 9] = 1;
 
@@ -31,6 +31,32 @@ if(syscall == 1 ) then
      alias root_entry R7;
      alias user_id R8;
      alias user_name R9;
+
+      //file name already exist check
+      
+     index = 0;
+     while(index<60) do
+       
+       inode_entry = INODE_TABLE + index*16;
+       if([inode_entry + 1] == file_name) then
+           
+           break;
+
+       endif;
+
+       index = index +1;
+
+    endwhile;
+
+
+    if(index != 60) then
+       
+       R10 = 0;
+       goto ret;
+
+
+    endif;
+
 
      index = 0;
 
@@ -242,6 +268,6 @@ ret :
 [process_entry + 9] = 0;
 [[PTBR + 2*(userSP - 1)/512]*512 + (userSP - 1)%512] = R10;
 SP = [process_entry + 13];
-breakpoint;
+
 ireturn;
 

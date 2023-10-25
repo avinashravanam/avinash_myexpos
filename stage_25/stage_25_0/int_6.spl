@@ -34,7 +34,7 @@ ireturn;
 
 read_file :
 
-breakpoint;
+
 
 if(!(0<= file_descriptor && file_descriptor <8)) then
      
@@ -75,7 +75,7 @@ lseek = [open_entry + 2];
 
 if(inode_index == INODE_ROOT) then
      
-     if(lseek == 480) then
+     if(lseek >= 480) then
          
          //release inode 
          multipush(R0,R1);
@@ -97,7 +97,7 @@ if(inode_index == INODE_ROOT) then
 
 else 
    
-   if(lseek == [inode_entry + 2]) then
+   if(lseek >= [inode_entry + 2]) then
         
 
         //release inode 
@@ -117,7 +117,7 @@ else
 
     
  
-    breakpoint;
+
     //call_buffer_read
     alias block_number R10;
 

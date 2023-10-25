@@ -5,7 +5,7 @@ alias fun_number R1;
 //disk_store
 if(fun_number == 1) then
     
-    breakpoint;
+
     alias currentPID R2;
     alias page_number R3;
     alias block_number R4;

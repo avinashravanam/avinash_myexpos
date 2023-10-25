@@ -51,12 +51,12 @@ if(fun_number == 1) then
         multipop(R1,R2,R3,R4,R5,R6);
 
         [buffer_entry] = block_number;
-        breakpoint;
+
 
     endif;
 
     [(71 + buffer_number)*512 + offset] = value;
-    breakpoint;
+
 
     [buffer_entry + 1] = 1;
 
@@ -122,12 +122,12 @@ if(fun_number == 2) then
         multipop(R1,R2,R3,R4,R5,R6);
 
         [buffer_entry] = block_number;
-        breakpoint;
+
 
     endif;
 
     [[PTBR + 2*(address)/512 ]*512 + (address)%512] = [(71 + buffer_number)*512 + offset];
-    breakpoint;
+
 
      //release bufffer
      multipush(R1,R2,R3,R4,R5);
@@ -156,7 +156,7 @@ if(fun_number == 3) then
        
        inode_entry = INODE_TABLE + inode_index*16;
 
-       if([inode_entry + 1] == file_name) then 
+       if([inode_entry + 1] == file_name && [inode_entry] != 3) then 
            
            break;
 
@@ -261,7 +261,10 @@ endif;
 //close 
 if(fun_number == 4) then
     
+
+    print "close";
     alias open_index R2;
+
     alias open_entry R3;
     alias inode_index R4;
 

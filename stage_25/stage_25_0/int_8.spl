@@ -1,8 +1,6 @@
 //fork system_call INT 8
 //no arguments
 
-
-
 alias user_SP R0;
 alias child_pid R1;
 alias j R7;

@@ -38,14 +38,7 @@ endif;
 //free user page
 if(fun_num == 2)  then
 
-
-    breakpoint;
-
     alias PID R2;
-    print PID;
-    alias temp R13;
-    temp = [SYSTEM_STATUS_TABLE + 1];
-    print temp;
 
     alias user_page R3;
 
@@ -97,7 +90,7 @@ if(fun_num == 2)  then
     endwhile;
 
 
-    breakpoint;
+
     return;
 
     

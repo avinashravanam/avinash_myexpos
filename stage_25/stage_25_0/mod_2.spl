@@ -139,7 +139,7 @@ if(fun_num == 5) then
             R5 = [PAGE_TABLE_BASE + i*20 + j*2 + 1];
             if(R5=="0100" || R5 =="1100" || R5 =="0110" || R5 =="1110" || R5 =="0101" || R5 =="1101" || R5 =="0111" || R5 =="1111") then
                 
-                // print "happy";
+
                 alias page_num R0;
                 page_num = [PAGE_TABLE_BASE + i*20 + j*2];
                 [MEMORY_FREE_LIST + page_num] = [MEMORY_FREE_LIST + page_num] + 1;

@@ -1,6 +1,6 @@
 //exception handler
 
-
+breakpoint;
 [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 13] = SP;
 SP = [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 11]*512 - 1;
 backup;
@@ -39,7 +39,7 @@ if(EC != 0 || [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 13] == PTLR*512 - 
 
 else  if(EC == 0)  then
     
-    breakpoint;
+
     // print "EPN";
     // print EPN;
 
@@ -97,5 +97,5 @@ restore;
 SP = [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 13];
 SP = SP + 1;
 [[PTBR + 2*(SP/512)]*512 + SP%512] = EIP;
-breakpoint;
+
 ireturn;

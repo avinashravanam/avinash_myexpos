@@ -14,14 +14,14 @@ int main()
             // msg = "child";
             // t = exposcall("Write",-2,msg);
             // t = exposcall("Read", -1, file);
-            t = exposcall("Exec","odd.xsm");
+            t = exposcall("Exec","even.xsm");
 
         else if(t>0)  then
            
             // msg = "parent";
             // t = exposcall("Write",-2,msg);
             // t = exposcall("Read", -1, file);
-            t = exposcall("Exec","even.xsm");
+            t = exposcall("Exec","odd.xsm");
 
         endif;
         endif;

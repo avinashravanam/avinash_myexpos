@@ -43,7 +43,6 @@ ireturn;
 
 write_file :
 
-breakpoint;
 
 if(!(0<= file_descriptor && file_descriptor <8)) then
    
@@ -122,16 +121,16 @@ alias block_number R10;
 
 if(lseek == [inode_entry + 2] && lseek%512 == 0 ) then
       
-      print "bblock";
-      breakpoint;
+   
+
       multipush(R0,R1,R2,R3,R4,R5,R6,R7,R8,R9);
       R1 = 3;
       call MOD_2;
       R10 = R0;
       multipop(R0,R1,R2,R3,R4,R5,R6,R7,R8,R9);
       
-      print "ablock";
-      breakpoint;
+    
+
       if(block_number == -1) then
 
         //release inode 
@@ -159,21 +158,22 @@ R1 = 1;
 R2 = block_number;
 R4 = value;
 R3 = lseek%512;
-breakpoint;
 call MOD_3;
 multipop(R0,R1,R2,R3,R4,R5,R6,R7,R8,R9);
 
-breakpoint;
 
-alias root_entry R11;
+if(lseek == [inode_entry + 2]) then
 
-root_entry = ROOT_FILE + inode_index*8;
+     alias root_entry R11;
+     root_entry = ROOT_FILE + inode_index*8;
 
-[inode_entry + 2] = [inode_entry + 2] + 1;
-[root_entry + 1] = [root_entry + 1] + 1;
+     [inode_entry + 2] = [inode_entry + 2] + 1;
+     [root_entry + 1] = [root_entry + 1] + 1;
+
+endif;
+
 [open_entry + 2] = [open_entry + 2] +1;
 
-breakpoint;
 
 
 //release inode 

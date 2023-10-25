@@ -1,7 +1,5 @@
 //exec systemcall
 
-// print "exec";
-
 alias  USER_SP R0;
 USER_SP = SP;
 
