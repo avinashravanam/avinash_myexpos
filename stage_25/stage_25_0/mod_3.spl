@@ -262,7 +262,7 @@ endif;
 if(fun_number == 4) then
     
 
-    print "close";
+
     alias open_index R2;
 
     alias open_entry R3;
