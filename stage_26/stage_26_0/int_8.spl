@@ -242,5 +242,5 @@ endwhile;
 [parent_pcb + 9 ] = 0;
 SP = [parent_pcb + 13];
 
-breakpoint;
+
 ireturn;

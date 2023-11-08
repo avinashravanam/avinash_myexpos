@@ -2,7 +2,7 @@ int main()
 {
     decl 
 
-      int t;
+      int t,permission;
       str file;
 
     enddecl
@@ -12,7 +12,8 @@ int main()
 
     t = exposcall("Write", -2 , "file name");
     t = exposcall("Read",-1,file);
-    t = exposcall("Create",file,0);
+    t = exposcall("Read",-1,permission);
+    t = exposcall("Create",file,permission);
 
     return 0;
     

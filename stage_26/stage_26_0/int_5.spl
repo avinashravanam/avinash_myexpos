@@ -15,7 +15,7 @@ syscall = [[PTBR + 2*(userSP - 5)/512]*512 + (userSP-5)%512];
 //open syscall
 if(syscall == 2) then
    
-  
+  breakpoint;
   [process_entry + 9] = 2;
 
    alias file_name R3;
@@ -27,7 +27,7 @@ if(syscall == 2) then
    user_page = [process_entry + 11];
    RESOURCE_TABLE_ADDRESS = (user_page + 1)*512 - 16;
 
-    breakpoint;
+
 
    i = 0;
    while(i<8) do
@@ -88,11 +88,11 @@ if(syscall == 2) then
 
 open_ret :
     
-
+    breakpoint;
     [process_entry + 9] =0;
     [[PTBR + 2*(userSP - 1)/512]*512 + (userSP-1)%512] = R10;
     SP = [process_entry + 13];
-     breakpoint;
+
     ireturn;
      
 endif;
@@ -101,7 +101,7 @@ endif;
 //close syscall
 if(syscall == 3) then
      
-    
+     breakpoint;
      [process_entry + 9] =3;
 
      alias file_descriptor R3;
@@ -114,7 +114,7 @@ if(syscall == 3) then
 
      RESOURCE_TABLE_ADDRESS = (user_page + 1)*512 - 16;
 
-     breakpoint;
+  
 
      if([RESOURCE_TABLE_ADDRESS + 2*file_descriptor] != 0) then
          
@@ -141,11 +141,11 @@ if(syscall == 3) then
 
 close_ret:
            
-  
+           breakpoint;
            [process_entry + 9] = 0;
            [[PTBR + 2*(userSP - 1)/512]*512 + (userSP-1)%512] = R10;
            SP = [process_entry + 13];
-           breakpoint;
+
            ireturn;
     
 endif;
@@ -154,7 +154,7 @@ endif;
 //seek 
 if(syscall == 6) then
     
-     breakpoint;
+
     alias file_descriptor R3;
     alias offset R4;
 
@@ -212,7 +212,7 @@ if(syscall == 6) then
            [process_entry + 9] =0;
            [[PTBR + 2*(userSP - 1)/512]*512 + (userSP-1)%512] = R11;
            SP = [process_entry + 13];
-            breakpoint;
+
            ireturn;
 
     

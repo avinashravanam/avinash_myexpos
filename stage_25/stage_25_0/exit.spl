@@ -1,5 +1,5 @@
 SP = [PROCESS_TABLE + [SYSTEM_STATUS_TABLE+1]*16 + 11]*512 -1;
-
+breakpoint;
 [PROCESS_TABLE + [SYSTEM_STATUS_TABLE+1]*16 + 9] = 10;  //mode change
 //calling exit process 
 
