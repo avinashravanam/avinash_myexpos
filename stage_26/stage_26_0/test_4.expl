@@ -19,13 +19,18 @@ enddecl
 begin
   x = exposcall("Heapset");
   semid = exposcall("Semget");
+  semid1 = exposcall("Semget");
+  semid2 = exposcall("Semget");
   head = exposcall("Alloc", 2);
   head.isempty = 1;
   pidone = exposcall("Fork");
 
   if (pidone == 0) then
+     
+    
     iter = 1;
     while(iter <= 100) do
+ 
       temp = exposcall("SemLock", semid);
       temp = head.isempty;
 
@@ -41,6 +46,8 @@ begin
       while(counter < 50) do
         counter = counter + 1;
       endwhile;
+
+
     endwhile;
   else
     pidtwo =  exposcall("Fork");

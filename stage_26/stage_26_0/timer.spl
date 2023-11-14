@@ -2,6 +2,11 @@
 SP=[PROCESS_TABLE +([SYSTEM_STATUS_TABLE+1]*16) +11]*512 -1;
 backup;
 
+alias swap_status R2;
+swap_status = [SYSTEM_STATUS_TABLE + ]
+
+
+
 alias currentPID R0;
 currentPID =[SYSTEM_STATUS_TABLE +1];
 
