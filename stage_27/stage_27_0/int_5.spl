@@ -14,8 +14,8 @@ syscall = [[PTBR + 2*(userSP - 5)/512]*512 + (userSP-5)%512];
 
 //open syscall
 if(syscall == 2) then
-   
-  breakpoint;
+
+  
   [process_entry + 9] = 2;
 
    alias file_name R3;
@@ -62,7 +62,6 @@ if(syscall == 2) then
     alias open_file_entry R7;
 
 
-
     //File not found or file is not a data or root file
     if(open_file_entry == -1) then
          
@@ -88,7 +87,6 @@ if(syscall == 2) then
 
 open_ret :
     
-    breakpoint;
     [process_entry + 9] =0;
     [[PTBR + 2*(userSP - 1)/512]*512 + (userSP-1)%512] = R10;
     SP = [process_entry + 13];
@@ -101,7 +99,7 @@ endif;
 //close syscall
 if(syscall == 3) then
      
-     breakpoint;
+
      [process_entry + 9] =3;
 
      alias file_descriptor R3;
@@ -141,7 +139,7 @@ if(syscall == 3) then
 
 close_ret:
            
-           breakpoint;
+    
            [process_entry + 9] = 0;
            [[PTBR + 2*(userSP - 1)/512]*512 + (userSP-1)%512] = R10;
            SP = [process_entry + 13];
@@ -187,6 +185,14 @@ if(syscall == 6) then
     lseek = [open_entry + 2];
 
     lseek = lseek + offset;
+
+    if(offset == 0) then
+       
+       R11 = 0;
+       [open_entry + 2] = 0;
+       goto seek_ret;
+
+    endif;
 
     if(lseek < 0) then
         

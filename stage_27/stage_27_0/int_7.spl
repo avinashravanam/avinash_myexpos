@@ -66,6 +66,8 @@ if([RESOURCE_TABLE_ADDRESS + file_descriptor*2] != 0 ) then
 endif;
 
 
+//not checking file type need to implement this
+
 alias open_index R5;
 open_index = [RESOURCE_TABLE_ADDRESS + file_descriptor*2 + 1];
 

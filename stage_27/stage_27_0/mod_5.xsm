@@ -65,7 +65,6 @@ JMP _L4
 _L3:
 MOV R0, 0
 _L4:
-BRKP
 JMP new_process
 JMP _L2
 _L1:

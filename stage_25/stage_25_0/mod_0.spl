@@ -141,7 +141,7 @@ if(fun_number == 5) then
        
        [file_entry] = -1;
 
-       alias i R5;
+       alias i R6;
        i =0;
 
        while(i<16) do

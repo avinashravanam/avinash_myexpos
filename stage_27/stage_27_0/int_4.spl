@@ -14,7 +14,7 @@ syscall = [[PTBR + 2*(userSP - 5)/512]*512 + (userSP - 5)%512];
 //create file
 if(syscall == 1 ) then
     
-      breakpoint;
+  
      //mode change 
      [process_entry + 9] = 1;
 
@@ -104,7 +104,7 @@ if(syscall == 1 ) then
     [root_entry + 3] = user_name;
     [root_entry + 4] = permission;
 
-     breakpoint;
+
      R10 = 0;
      goto ret;
 
@@ -114,10 +114,6 @@ endif;
 
 //delete file 
 if(syscall == 4) then
-
-
-
-    breakpoint;
 
     //mode change 
    [process_entry + 9] = 4;
@@ -134,7 +130,6 @@ if(syscall == 4) then
    c_userid =  [process_entry + 3];
 
     
-   print file_name;
 
    index = 0;
 
@@ -183,14 +178,11 @@ if(syscall == 4) then
     R1 = 4;                                
     R2 = R5;
     R3 = [SYSTEM_STATUS_TABLE + 1];
-    print R2;
-    print R3;
     call MOD_0;
     R10 = R0;
     multipop(R0,R1,R2,R3,R4,R5,R6);
 
 
-    breakpoint;
 
     // file already deleted
     if(R10 == -1) then
@@ -273,12 +265,10 @@ if(syscall == 4) then
     R1 = 5;                                
     R2 = R5;
     R3 = [SYSTEM_STATUS_TABLE + 1];
-    print R2;
-    print R3;
     call MOD_0;
     multipop(R0,R1);
 
-    breakpoint;
+
     R10 = 0;
     goto ret;
 

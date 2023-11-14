@@ -1,8 +1,6 @@
 //fork system_call INT 8
 //no arguments
 
-
-
 alias user_SP R0;
 alias child_pid R1;
 alias j R7;
@@ -116,7 +114,7 @@ while (i < 8) do
    endif;
 
    if([RESOURCE_TABLE_PARENT_ADDRESS + i*2] == 0) then
-       alias open_index R8;
+       alias open_index R6;
        open_index = [RESOURCE_TABLE_PARENT_ADDRESS + i*2 + 1];
 
        [OPEN_FILE_TABLE + open_index*4 + 1] = [OPEN_FILE_TABLE + open_index*4 + 1] +1;
@@ -243,6 +241,7 @@ endwhile;
 //mode change
 [parent_pcb + 9 ] = 0;
 SP = [parent_pcb + 13];
+
 
 
 ireturn;

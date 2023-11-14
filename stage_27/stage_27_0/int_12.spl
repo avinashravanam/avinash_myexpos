@@ -15,7 +15,7 @@ syscall = [[PTBR + 2*(userSP -5)/512]*512 + (userSP - 5)%512 ];
 if(syscall == 28) then
     
 
-    breakpoint;
+
 
     [process_entry + 9] = 28;
 
@@ -42,7 +42,7 @@ if(syscall == 28) then
 
    [SYSTEM_STATUS_TABLE] = 0;        
 
-   breakpoint;
+
    multipush(R0,R1,R2);
    call MOD_5;
    multipop(R0,R1,R2);

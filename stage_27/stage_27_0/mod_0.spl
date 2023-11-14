@@ -93,8 +93,11 @@ endif;
 //acquire inode
 if(fun_number == 4) then
    
+   
    alias inodeindex R2;
    alias PID R3;
+
+ 
 
    alias file_entry R4;
 
@@ -102,6 +105,8 @@ if(fun_number == 4) then
 
    while([file_entry]!= -1 && [file_entry]!= PID) do
        
+
+
        [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 4] = WAIT_FILE;
        [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 1]*16 + 5] = inodeindex;
 
@@ -115,8 +120,11 @@ if(fun_number == 4) then
     if([INODE_TABLE + inodeindex*16+ 1] == -1) then
         
         R0 = -1;
+        return;
 
     endif;
+    
+
 
     [file_entry] = PID;
 
@@ -141,7 +149,7 @@ if(fun_number == 5) then
        
        [file_entry] = -1;
 
-       alias i R5;
+       alias i R6;
        i =0;
 
        while(i<16) do

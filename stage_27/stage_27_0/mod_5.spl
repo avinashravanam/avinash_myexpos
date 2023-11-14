@@ -27,7 +27,6 @@ if([SYSTEM_STATUS_TABLE + 5] != 0 ) then
       endif;
       
 
-      breakpoint;
     goto  new_process;
 
 endif;
